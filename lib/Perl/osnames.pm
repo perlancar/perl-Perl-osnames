@@ -6,6 +6,9 @@ package Perl::osnames;
 use strict;
 use warnings;
 
+use Exporter qw(import);
+our @EXPORT_OK = qw($data is_unix is_posix);
+
 our $data = [
 
     ['aix', [qw/unix sysv posix/], 'IBM AIX'],
@@ -77,13 +80,37 @@ for (@$data) {
 #use Data::Dump::Color;
 #dd $data;
 
+sub is_posix {
+    my $os = shift // $^O;
+    for my $rec (@$data) {
+        next unless $rec->[0] eq $os;
+        for (@{$rec->[1]}) {
+            return 1 if $_ eq 'posix';
+        }
+        return 0;
+    }
+    undef;
+}
+
+sub is_unix {
+    my $os = shift // $^O;
+    for my $rec (@$data) {
+        next unless $rec->[0] eq $os;
+        for (@{$rec->[1]}) {
+            return 1 if $_ eq 'unix';
+        }
+        return 0;
+    }
+    undef;
+}
+
 1;
 # ABSTRACT: List possible $^O ($OSNAME) values, with description
 
 =head1 DESCRIPTION
 
 This package contains C<$data> which lists possible values of C<$^O> along with
-description for each.
+description for each. It also provides some helper functions.
 
 =head2 Tags
 
@@ -110,6 +137,34 @@ From what I can gather, dec_osf is not POSIX compliant, although there is a
 posix package for it.
 
 =back
+
+
+=head1 VARIABLES
+
+None are exported by default, but they are exportable.
+
+=head2 C<$data>
+
+An arrayref of records (arrayrefs), each structured as:
+
+ [$name, \@tags, $description]
+
+
+=head1 FUNCTIONS
+
+None are exported by default, but they are exportable.
+
+=head2 is_posix([ $os ]) => bool
+
+Check whether C<$os> (defaults to C<$^O> if not specified) is POSIX (checked by
+the existence of C<posix> tag on the OS's record in C<$data>). Will return 0, 1,
+or undef if C<$os> is unknown.
+
+=head2 is_unix([ $os ]) => bool
+
+Check whether C<$os> (defaults to C<$^O> if not specified) is Unix (checked by
+the existence of C<unix> tag on the OS's record in C<$data>). Will return 0, 1,
+or undef if C<$os> is unknown.
 
 
 =head1 SEE ALSO
