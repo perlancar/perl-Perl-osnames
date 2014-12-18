@@ -85,6 +85,30 @@ for (@$data) {
 This package contains C<$data> which lists possible values of C<$^O> along with
 description for each.
 
+=head2 Tags
+
+=item * unix
+
+Unix-like operating systems. This currently excludes beos/haiku.
+
+=item * bsd
+
+BSD-derived Unix operating systems.
+
+=item * sysv
+
+SysV-derived Unix operating systems.
+
+=item * posix
+
+For POSIX-compliant OSes, including fully-, mostly-, and largely-compliant ones
+(source: L<http://en.wikipedia.org/wiki/POSIX>).
+
+From what I can gather, dec_osf is not POSIX compliant, although there is a
+posix package for it.
+
+=back
+
 
 =head1 SEE ALSO
 
