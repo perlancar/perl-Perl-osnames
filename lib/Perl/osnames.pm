@@ -87,6 +87,8 @@ description for each.
 
 =head2 Tags
 
+=over
+
 =item * unix
 
 Unix-like operating systems. This currently excludes beos/haiku.
