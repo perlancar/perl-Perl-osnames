@@ -1,5 +1,12 @@
 Revision history for Perl-osnames
 
+0.09    2014-12-18 (PERLANCAR)
+
+        - Add functions: is_posix, is_unix.
+
+        - Make $data exportable.
+
+
 0.08    2014-12-18 (PERLANCAR)
 
 	- No data changes.
