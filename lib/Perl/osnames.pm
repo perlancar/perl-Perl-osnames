@@ -162,6 +162,11 @@ L<perlvar>
 
 L<Config>
 
+L<Perl::OSType>, a core module. You should probably use this module instead.
+Currently the difference between this module and Perl::osnames: 1) Perl::osnames
+currently doesn't list beos/haiku as Unix, but POSIX; 2) Perl::osnames provides
+more tags (like sysv, bsd, posix) and description.
+
 L<Devel::Platform::Info>
 
 The output of C<perl -V>
