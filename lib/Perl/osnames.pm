@@ -171,6 +171,8 @@ L<Devel::Platform::Info>
 
 The output of C<perl -V>
 
-L<App::osnames>
+L<App::osnames>, the original reason for Perl::osnames. With this CLI tool you
+can grep OS names by name, tag, or description, e.g. C<osnames solaris> or
+C<osnames posix>.
 
 =cut
