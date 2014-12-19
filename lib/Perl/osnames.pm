@@ -70,7 +70,7 @@ _
 #dd $data;
 
 sub is_posix {
-    my $os = shift // $^O;
+    my $os = shift || $^O;
     for my $rec (@$data) {
         next unless $rec->[0] eq $os;
         for (@{$rec->[1]}) {
@@ -82,7 +82,7 @@ sub is_posix {
 }
 
 sub is_unix {
-    my $os = shift // $^O;
+    my $os = shift || $^O;
     for my $rec (@$data) {
         next unless $rec->[0] eq $os;
         for (@{$rec->[1]}) {
