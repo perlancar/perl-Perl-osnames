@@ -1,5 +1,10 @@
 Revision history for Perl-osnames
 
+0.11    2014-12-19 (PERLANCAR)
+
+	- Perl 5.8 compatibility (don't use defined-or operator).
+
+
 0.10    2014-12-19 (PERLANCAR)
 
         - Add more OS'es from Perl::OSType.
