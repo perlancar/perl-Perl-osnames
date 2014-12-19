@@ -66,8 +66,8 @@ _
 #});
 
 # debug: dump data
-use Data::Dump::Color;
-dd $data;
+#use Data::Dump::Color;
+#dd $data;
 
 sub is_posix {
     my $os = shift // $^O;
