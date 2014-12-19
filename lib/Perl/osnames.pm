@@ -16,8 +16,15 @@ our $data = [map {
     \@f;
 } split /^/m, <<'_'];
 aix          posix,sysv,unix   IBM AIX.
+amigaos      -
+android      sysv,unix
+bsdos        bsd,unix          BSD/OS. Originally called BSD/386, also known as BSDi.
 beos         posix             See also: haiku.
-cygwin       posix,unix
+bitrig       bsd,unix          An OpenBSD fork.
+dgux         sysv,unix         DG/UX.
+dos          -
+dynixptx     sysv,unix         DYNIX/ptx.
+cygwin       posix,unix        Unix-like emulation layer that runs on Windows.
 darwin       bsd,posix,unix    Mac OS X. Does not currently (2013) include iOS. See also: iphoneos.
 dec_osf      -                 DEC Alpha.
 dragonfly    bsd,posix,unix    DragonFly BSD.
@@ -27,16 +34,28 @@ haiku        posix             See also: beos.
 hpux         posix,sysv,unix   HP-UX.
 interix      posix,unix        Optional, POSIX-compliant Unix subsystem for Windows NT. Also known as Microsoft SFU. No longer included in Windows nor supported.
 irix         posix,sysv,unix
-linux        posix,unix
+linux        posix,sysv,unix
 MacOS        -                 Mac OS Classic (predates Mac OS X). See also: darwin, iphoneos.
+machten      bsd,unix          MachTen, an operating system that runs virtually under Mac OS.
 midnightbsd  bsd,posix,unix
 minix        bsd,posix
 mirbsd       bsd,posix,unix    MirOS BSD.
+mpeix        -                 MPEiX.
 MSWin32      -                 All Windows platforms including 95/98/ME/NT/2000/XP/CE/.NET. But does not include Cygwin (see "cygwin") or Interix (see "interix"). To get more details on which Windows you are on, use Win32::GetOSName() or Win32::GetOSVersion(). Ref: perlvar.
 netbsd       bsd,posix,unix
+next         unix              NeXTSTEP OS.
+nto          unix              ?
 openbsd      bsd,posix,unix
+os390        ebcdic
+os400        ebcdic
+posix-bc     ebcdic
+qnx          unix
+riscos       -
 sco          posix,sysv,unix   SCO UNIX.
 solaris      posix,sysv,unix   This includes the old SunOS.
+vmesa        ebcdic
+vms          -
+vos          -
 _
 
 # dump: display data as table
