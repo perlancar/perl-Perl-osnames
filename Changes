@@ -1,5 +1,3 @@
-Revision history for Perl-osnames
-
 0.11    2014-12-19 (PERLANCAR)
 
 	- Perl 5.8 compatibility (don't use defined-or operator).
