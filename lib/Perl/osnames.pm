@@ -1,13 +1,16 @@
 package Perl::osnames;
 
+# AUTHORITY
 # DATE
+# DIST
 # VERSION
 
 use strict;
 use warnings;
 
 use Exporter qw(import);
-our @EXPORT_OK = qw($data is_unix is_posix);
+our @EXPORT_OK = qw($data is_unix is_posix
+                    $RE_OS_IS_KNOWN $RE_OS_IS_POSIX $RE_OS_IS_UNIX);
 
 our $data = [map {
     chomp;
@@ -69,28 +72,45 @@ _
 #use Data::Dump::Color;
 #dd $data;
 
+our $RE_OS_IS_KNOWN = do {
+    my $re = join "|", map { $_->[0] } @$data;
+    qr/\A(?:$re)\z/;
+};
+
+our $RE_OS_IS_POSIX = do {
+    my @os;
+  OS:
+    for my $rec (@$data) {
+        for (@{$rec->[1]}) {
+            do { push @os, $rec->[0]; next OS } if $_ eq 'posix';
+        }
+    }
+    my $re = join("|", @os);
+    qr/\A(?:$re)\z/;
+};
+
+our $RE_OS_IS_UNIX = do {
+    my @os;
+  OS:
+    for my $rec (@$data) {
+        for (@{$rec->[1]}) {
+            do { push @os, $rec->[0]; next OS } if $_ eq 'unix';
+        }
+    }
+    my $re = join("|", @os);
+    qr/\A(?:$re)\z/;
+};
+
 sub is_posix {
     my $os = shift || $^O;
-    for my $rec (@$data) {
-        next unless $rec->[0] eq $os;
-        for (@{$rec->[1]}) {
-            return 1 if $_ eq 'posix';
-        }
-        return 0;
-    }
-    undef;
+    return undef unless $os =~ $RE_OS_IS_KNOWN;
+    $os =~ $RE_OS_IS_POSIX ? 1:0;
 }
 
 sub is_unix {
     my $os = shift || $^O;
-    for my $rec (@$data) {
-        next unless $rec->[0] eq $os;
-        for (@{$rec->[1]}) {
-            return 1 if $_ eq 'unix';
-        }
-        return 0;
-    }
-    undef;
+    return undef unless $os =~ $RE_OS_IS_KNOWN;
+    $os =~ $RE_OS_IS_UNIX ? 1:0;
 }
 
 1;
@@ -137,6 +157,15 @@ None are exported by default, but they are exportable.
 An arrayref of records (arrayrefs), each structured as:
 
  [$name, \@tags, $description]
+
+
+=head1 VARIABLES
+
+=head2 $RE_OS_IS_KNOWN
+
+=head2 $RE_OS_IS_POSIX
+
+=head2 $RE_OS_IS_UNIX
 
 
 =head1 FUNCTIONS
