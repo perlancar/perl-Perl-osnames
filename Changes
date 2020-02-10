@@ -1,3 +1,9 @@
+0.121   2020-02-10  Released-By: PERLANCAR; Urgency: medium
+
+	- [Update data] Rename vms->VMS; Add gnu, iphoneos, msys, os2, sco_sv,
+	  sunos, srv4, srv5, unicos, unicosmk.
+
+
 0.120   2020-02-10  Released-By: PERLANCAR; Urgency: medium
 
 	- Add exportable variables: $RE_OS_IS_{KNOWN,POSIX,UNIX}.
