@@ -32,10 +32,12 @@ darwin       bsd,posix,unix    Mac OS X. Does not currently (2013) include iOS. 
 dec_osf      -                 DEC Alpha.
 dragonfly    bsd,posix,unix    DragonFly BSD.
 freebsd      bsd,posix,unix
+gnu          posix,unix        Unix-like operating system which can have one these kernels: Hurd, Linux, FreeBSD.
 gnukfreebsd  bsd,posix,unix    Debian GNU/kFreeBSD.
 haiku        posix             See also: beos.
 hpux         posix,sysv,unix   HP-UX.
 interix      posix,unix        Optional, POSIX-compliant Unix subsystem for Windows NT. Also known as Microsoft SFU. No longer included in Windows nor supported.
+iphoneos     posix,unix        Darwin-based OS X which is mostly POSIX compatible.
 irix         posix,sysv,unix
 linux        posix,sysv,unix
 MacOS        -                 Mac OS Classic (predates Mac OS X). See also: darwin, iphoneos.
@@ -44,20 +46,28 @@ midnightbsd  bsd,posix,unix
 minix        bsd,posix
 mirbsd       bsd,posix,unix    MirOS BSD.
 mpeix        -                 MPEiX.
+msys         posix,unix        A component of MinGW (minimalist Gnu for Windows) that is POSIX compatible.
 MSWin32      -                 All Windows platforms including 95/98/ME/NT/2000/XP/CE/.NET. But does not include Cygwin (see "cygwin") or Interix (see "interix"). To get more details on which Windows you are on, use Win32::GetOSName() or Win32::GetOSVersion(). Ref: perlvar.
 netbsd       bsd,posix,unix
 next         unix              NeXTSTEP OS.
 nto          unix              ?
 openbsd      bsd,posix,unix
+os2          -                 OS/2.
 os390        ebcdic
 os400        ebcdic
 posix-bc     ebcdic
 qnx          unix
 riscos       -
 sco          posix,sysv,unix   SCO UNIX.
+sco_sv       posix,sysv,unix   SCO OpenServer/UnixWare.
 solaris      posix,sysv,unix   This includes the old SunOS.
+sunos        bsd,posix,unix    SunOS, BSD-based predecessor to the System V Solaris.
+svr4         posix,sysv,unix   System V Release 4.
+svr5         posix,sysv,unix   System V Release 5.
+unicos       posix,sysv,unix   Unix-like operating system for Cray supercomputers.
+unicosmk     posix,sysv,unix   Unix-like operating system for Cray supercomputers.
 vmesa        ebcdic
-vms          -
+VMS          -
 vos          -
 _
 
