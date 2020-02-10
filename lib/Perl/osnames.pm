@@ -158,9 +158,6 @@ An arrayref of records (arrayrefs), each structured as:
 
  [$name, \@tags, $description]
 
-
-=head1 VARIABLES
-
 =head2 $RE_OS_IS_KNOWN
 
 =head2 $RE_OS_IS_POSIX
