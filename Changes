@@ -6,10 +6,14 @@
 
 0.120   2020-02-10  Released-By: PERLANCAR; Urgency: medium
 
+	- No data changes.
+
 	- Add exportable variables: $RE_OS_IS_{KNOWN,POSIX,UNIX}.
 
 
 0.11    2014-12-19  Released-By: PERLANCAR
+
+	- No data changes.
 
 	- Perl 5.8 compatibility (don't use defined-or operator).
 
@@ -22,6 +26,8 @@
 
 
 0.09    2014-12-18  Released-By: PERLANCAR
+
+	- No data changes.
 
         - Add functions: is_posix, is_unix.
 
