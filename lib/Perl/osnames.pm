@@ -170,9 +170,21 @@ An arrayref of records (arrayrefs), each structured as:
 
 =head2 $RE_OS_IS_KNOWN
 
+Current value:
+
+# CODE: require Perl::osnames; $Perl::osnames::RE_OS_IS_KNOWN;
+
 =head2 $RE_OS_IS_POSIX
 
+Current value:
+
+# CODE: require Perl::osnames; $Perl::osnames::RE_OS_IS_POSIX;
+
 =head2 $RE_OS_IS_UNIX
+
+Current value:
+
+# CODE: require Perl::osnames; $Perl::osnames::RE_OS_IS_UNIX;
 
 
 =head1 FUNCTIONS
